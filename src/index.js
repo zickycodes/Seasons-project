@@ -1,5 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SeasonDisplay from './SeasonDisplay';
+
+
+const Spinner = (props) => {
+  return (
+    <div className = "ui active dimmer"> 
+      <div className = "ui big text loader">
+        {props.message}
+      </div>
+    </div>
+  )
+}
 
 
 class App extends React.Component {
@@ -17,6 +29,26 @@ class App extends React.Component {
         this.setState({ errMessage: err.message });
       }
     );
+  }
+
+  helperFunc () {
+    if(!this.state.lat && !this.state.errMessage) {
+      return <div><Spinner message = "Accept Location Request!"/></div>
+    }
+
+    if(this.state.lat && !this.state.errMessage) {
+      return <SeasonDisplay lat = {this.state.lat}/>
+    }
+
+    if(!this.state.lat && this.state.errMessage) {
+      return <div>{this.state.errMessage}</div>
+    }
+  }
+
+  render () {
+    return (
+      this.helperFunc()
+    ) 
   }
 
 }
