@@ -1,0 +1,35 @@
+.season-display {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}     
+
+.season-display.Summer {
+    background-color: goldenrod;
+}
+
+.season-display.Winter {
+    background-color: skyblue;
+}
+
+.massive.icon:nth-child(1){
+   position: absolute;
+   top: 10px;
+   left: 2px;
+}
+
+.massive.icon:last-child {
+    position: absolute;
+    bottom: 10px;
+    right: 2px;
+}
+
+.massive.snowflake.icon {
+    color: aliceblue;
+}
+
+.massive.icon.sun.icon {
+    color: black;
+}
+
