@@ -30,6 +30,7 @@ class App extends React.Component {
       }
     );
   }
+  
 
   helperFunc () {
     if(!this.state.lat && !this.state.errMessage) {

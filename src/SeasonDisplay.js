@@ -2,11 +2,11 @@ import React from "react";
 import "./SeasonDisplay.css";
 
 const seasonsConfig = {
-  winter: {
+  Winter: {
     text: "Blur it is chilly",
     iconName: "snowflake",
   },
-  summer: {
+  Summer: {
     text: "Let us hit the beach",
     iconName: "sun",
   },
@@ -22,11 +22,10 @@ const getSeason = (lat, month) => {
 
 const SeasonDisplay = (props) => {
   const seasons = getSeason(props.lat, new Date().getMonth());
-  // const {text, iconName} = seasonsConfig[seasons]
-  console.log(seasonsConfig[seasons]);
-  const text =
-    seasons === "Summer" ? "Let us hit the beach" : "Blurr! It's chilly";
-  const iconName = seasons === "Summer" ? "sun" : "snowflake";
+  const {text, iconName} = seasonsConfig[seasons]
+  // const text =
+  //   seasons === "Summer" ? "Let us hit the beach" : "Blurr! It's chilly";
+  // const iconName = seasons === "Summer" ? "sun" : "snowflake";
 
   return (
     <div className={`season-display ${seasons}`}>
@@ -36,5 +35,6 @@ const SeasonDisplay = (props) => {
     </div>
   );
 };
+
 
 export default SeasonDisplay;
